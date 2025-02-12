@@ -1,38 +1,22 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ecommerceApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our E-commerce Store</h1>
-        <nav>
-            <ul>
-                <li>Home</a></li>
-                <li>Products</a></li>
-                <li>About Us</a></li>
-                <li>Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Featured Products</h2>
-            <div class="product">
-                <h3>Product 1</h3>
-                <p>Description of Product 1</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <h3>Product 2</h3>
-                <p>Description of Product 2</p>
-                <button>Add to Cart</button>
-            </div>
-        </section>
-    </main>
-  
+    
+    <div ng-view></div>
+
+    
+    <script src="modules/app.js"></script> 
+    <script src="controllers/login.controller.js"></script> 
+    <script src="controllers/product.controller.js"></script> 
 </body>
 </html>

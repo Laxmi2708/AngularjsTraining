@@ -1,21 +1,17 @@
-import angular from 'angular';
-import uiRouter from '@uirouter/angularjs';
-import ngResource from 'angular-resource';
 
-const app = angular.module('ecommerceApp', [uiRouter, ngResource]);
+var app = angular.module('ecommerceApp', ['authmodule', 'catalogmodule', 'ngRoute']); 
 
-app.config(($stateProvider, $urlRouterProvider) => {
-    $urlRouterProvider.otherwise('/');
-
-    $stateProvider
-        .state('home', {
-            url: '/',
-            template: '<h1>Welcome to the E-commerce Website</h1>'
+app.config(function($routeProvider) {
+    $routeProvider
+        .when('/', {  
+            templateUrl: 'views/login.html',
+            controller: 'LoginController'
         })
-        .state('products', {
-            url: '/products',
-            template: '<h1>Products List</h1>'
+        .when('/products', {  
+            templateUrl: 'views/products.html',
+            controller: 'ProductController'
+        })
+        .otherwise({
+            redirectTo: '/'  
         });
 });
-
-export default app;
